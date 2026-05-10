@@ -8,7 +8,7 @@ using(HttpClient client = new HttpClient())
         string resultado = await client.GetStringAsync("https://randomuser.me/api/?results=100");
         RespostaUsuario? dados = JsonSerializer.Deserialize<RespostaUsuario>(resultado);
 
-        /*int contador = 1;
+        int contador = 1;
         if (dados != null && dados.Resultado != null)
             foreach (Usuario usuario in dados.Resultado)
             {
@@ -19,7 +19,7 @@ using(HttpClient client = new HttpClient())
 
             LinqFiltro.FiltrarBrasileiros(dados.Resultado);
             LinqFiltro.OrdenarUsuarioNome(dados.Resultado);
-            LinqFiltro.ExibirEmails(dados.Resultado);*/
+            LinqFiltro.ExibirEmails(dados.Resultado);
             LinqFiltro.QuantidadeUsuariosPorPais(dados.Resultado);
     }
     catch(Exception e)
